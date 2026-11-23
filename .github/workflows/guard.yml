@@ -1,0 +1,9 @@
+name: guard
+on: [pull_request, merge_group]
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "event=${{ github.event_name }} sha=${{ github.sha }} base=${{ github.event.merge_group.base_sha }} head=${{ github.event.merge_group.head_sha }}"
+          sleep 20
